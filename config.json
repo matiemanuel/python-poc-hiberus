@@ -1,5 +1,7 @@
 {
-    "browser": "Chrome",
-    "headless": false,
-    "implicit_wait": 10
+    "browser": "Firefox",
+    "headless": true,
+    "implicit_wait": 10,
+    "run_remotely": false,
+    "command_executor": "http://localhost:4444/wd/hub"
 }
