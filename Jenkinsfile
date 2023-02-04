@@ -8,11 +8,16 @@ pipeline {
         }
 
         stage("run tests"){
-            echo 'Running tests'
+            steps {
+                echo 'Running tests'
+            }
+
         }
 
         stage("Reporting results"){
-            echo 'Last step'
+            steps {
+                echo 'Last step'
+            }
         }
     }
 }
