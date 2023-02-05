@@ -1,15 +1,10 @@
 from assertpy import assert_that
 from behave import given, when, then
 
-from conftest import config_browser, HOMEPAGE_URL
+from conftest import HOMEPAGE_URL
 from pages.hiberus.home_page import HomePage
 from pages.hiberus.markets_page import MarketsPage
 from pages.hiberus.work_with_us_page import WorkWithUsPage
-
-
-@given('launch a new browser')
-def launch_browser(context):
-    context.driver = config_browser()
 
 
 @given('Hiberus homepage is displayed')
@@ -48,8 +43,3 @@ def job_opportunities_page_is_displayed(context):
     WorkWithUsPage(context.driver).is_join_formulary_displayed()
     assert_that(context.driver.title).contains_ignoring_case('Por qué trabajar en Hiberus')
     assert_that(context.driver.current_url).contains("/trabaja-con-nosotros")
-
-
-@then('browser is closed')
-def quit_browser(context):
-    context.driver.quit()

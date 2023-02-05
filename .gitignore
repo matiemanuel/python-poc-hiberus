@@ -112,3 +112,4 @@ Pipfile
 Pipfile.lock
 
 geckodriver.log
+reports

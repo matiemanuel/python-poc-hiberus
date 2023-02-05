@@ -1,16 +1,19 @@
 import json
+import os
 
 import selenium.webdriver
 
 # Constants
 
 HOMEPAGE_URL = 'https://www.hiberus.com'
+ROOT_DIR = os.path.dirname(os.path.abspath('.gitignore'))
+CONFIG_FILEPATH = os.path.join(ROOT_DIR, 'config.json')
 
 
 # Util methods
 
 def config_browser():
-    with open('config.json') as config_file:
+    with open(CONFIG_FILEPATH) as config_file:
         config = json.load(config_file)
 
     browser = config['browser']
